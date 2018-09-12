@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.App{
+  text-align: center;
+}
+/*.el-menu-demo{*/
+  /*display: block;*/
+  /*align-content: center;*/
+/*}*/
+.el-button--text{
+  float: right;
+  margin: 1em!important;
+  color: #ffed4c!important;
+  text-decoration: none;
+}
+.link{
+  color: #4b67ff;
+  text-decoration: none;
+  margin: 2em;
+}
+h1{
+  font-family: "American Typewriter";
+  font-size: 10em;
+}
+.loginForm{
+  margin: 0 auto;
+  width: 25%;
+  position: relative;
+  top: 5em;
+  padding: 2em;
+  border: 1px solid black;
+}
+.newsItem {
+  padding: 0;
+}
+.newsItem li{
+  list-style: none;
+  margin: 50px 50px 50px;
+}
+.newsItem section{
+  text-align: justify;
+}
+.userLanguage, .userSocialNetworks{
+  list-style: none;
+}
+img{
+  width: 3em;
+  height: 3em;
+}
