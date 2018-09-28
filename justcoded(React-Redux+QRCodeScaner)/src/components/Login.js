@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {Button, ControlLabel, Col, Label, FormControl, FormGroup} from 'react-bootstrap';
+import LoginForm from '../components/LoginForm';
 
 class Login extends Component {
     state = {
@@ -41,21 +41,13 @@ class Login extends Component {
     };
 
     render() {
+        const {isLogin} = this.props;
         return (
-            <Col sm={4}>
-                {this.props.isLogin && <h1 style={{color: 'green'}}>Вы уже зарегестрированы</h1>}
-                <FormGroup>
-                    <ControlLabel>Форма регистрации</ControlLabel><br/>
-                    <Label>Логин:</Label>
-                    <FormControl type="text" placeholder="Введите логин или email..."
-                                 onChange={(event) => this.setLogin(event)}/>
-                    <Label>Пароль:</Label>
-                    <FormControl type="password" placeholder="Введите пароль..."
-                                 onChange={(event) => this.setPassword(event)}/>
-                    <span style={{color: 'red'}}>{this.state.errorMessage}</span>
-                </FormGroup>
-                <Button bsStyle="primary" onClick={() => this.userLogin()}>Регистрация</Button>
-            </Col>
+            <LoginForm isLogin={isLogin}
+                       userLogin={this.userLogin}
+                       setUserLogin={this.setLogin}
+                       setUserPassword={this.setPassword}
+                       errorMessage={this.state.errorMessage}/>
         )
     }
 }
