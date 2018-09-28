@@ -6,10 +6,6 @@ body {
 .App{
   text-align: center;
 }
-/*.el-menu-demo{*/
-  /*display: block;*/
-  /*align-content: center;*/
-/*}*/
 .el-button--text{
   float: right;
   margin: 1em!important;
