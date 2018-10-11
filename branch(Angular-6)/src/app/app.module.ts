@@ -1,12 +1,17 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {LoginComponent} from './components/login';
 import {NotFoundComponent} from './components/notFound';
 import {MainPageComponent} from './components/mainPage';
 
+const appRoutes: Routes = [
+  {path: '', component: LoginComponent},
+  {path: 'main', component: MainPageComponent},
+  {path: '**', component: NotFoundComponent}
+];
 
 @NgModule({
   declarations: [
@@ -16,7 +21,8 @@ import {MainPageComponent} from './components/mainPage';
     NotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]
