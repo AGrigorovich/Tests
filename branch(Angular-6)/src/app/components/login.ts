@@ -4,19 +4,22 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'login',
   templateUrl: '../views/login.html',
-  styleUrls: []
 })
 
 export class LoginComponent {
-  error: String;
 
   constructor(private route: Router) {
   }
+  error: String;
+  /* if we need to get inputs values directly we can use next variables
+  email: String;
+  password: String;*/
 
   validateUserData(form) {
     const {email = '', password = ''} = form;
+    // I use very primitive validation, but it's can be any difficult we need
     (email.trim().length < 6 || password.trim().length < 3) ?
-      this.error = 'You have entered incorrect data' :
+      this.error = 'You entered incorrect data' :
       this.userLogin({email, password});
   }
 
@@ -24,7 +27,7 @@ export class LoginComponent {
     this.route.navigateByUrl('/main');
   }
 
-  clearError() {
+  resetError() {
     this.error = '';
   }
 }

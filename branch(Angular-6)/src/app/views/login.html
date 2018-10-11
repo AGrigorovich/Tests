@@ -1,5 +1,5 @@
 <form class="col-md-6 offset-md-3" #form="ngForm" (submit)="validateUserData(form.value)">
-  <h3>Please logIn or singIn</h3>
+  <h3>Please logIn or signIn</h3>
   <div class="form-group">
     <label for="email">Email address:</label>
     <input type="email"
@@ -8,7 +8,7 @@
            placeholder="Enter your email..."
            name="email"
            [(ngModel)]="email"
-           (ngModelChange)="clearError()">
+           (ngModelChange)="resetError()">
   </div>
   <div class="form-group">
     <label for="pwd">Password:</label>
@@ -18,11 +18,11 @@
            placeholder="Enter your password..."
            name="password"
            [(ngModel)]="password"
-           (ngModelChange)="clearError()">
+           (ngModelChange)="resetError()">
   </div>
   <p *ngIf="error" style="color:red">{{error}}</p>
   <div class="form-group">
     <button class="btn btn-success" type="submit">LogIn</button>
-    <button class="btn btn-primary" type="submit">SingIn</button>
+    <button class="btn btn-primary" type="submit">SignIn</button>
   </div>
 </form>

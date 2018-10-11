@@ -4,7 +4,6 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'main-page',
   templateUrl: '../views/mainPage.html',
-  styleUrls: []
 })
 
 export class MainPageComponent {
