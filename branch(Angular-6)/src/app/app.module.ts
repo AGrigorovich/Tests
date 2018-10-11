@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {LoginComponent} from './components/login';
 import {NotFoundComponent} from './components/notFound';
 import {MainPageComponent} from './components/mainPage';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
     NotFoundComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes),
   ],
