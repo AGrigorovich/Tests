@@ -2,6 +2,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
+import {FirebaseModule, FirebaseProvider} from 'angular-firebase';
+
 import {AppComponent} from './app.component';
 import {LoginComponent} from './components/login';
 import {NotFoundComponent} from './components/notFound';
@@ -25,8 +27,9 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    FirebaseModule
   ],
-  providers: [],
+  providers: [FirebaseProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule {
