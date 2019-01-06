@@ -23,7 +23,7 @@ export class LoginComponent {
   password: String = '';
 
   validateUserData() {
-    // I use very primitive validation, but it's can be any difficult level we need
+    // I use very primitive validation, but it's can be any difficulty level we need
     (this.email.trim().length < 6 || this.password.trim().length < 6) ?
       this.error = 'You entered incorrect data' :
       this.error = '';
