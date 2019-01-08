@@ -36,7 +36,7 @@ legend {
 
 .itemsContainer {
     margin: 1em;
-    height: 25%;
+    height: 20%;
 }
 
 .itemsImagesContainer {
@@ -67,4 +67,23 @@ legend {
     border-left: 1em solid transparent !important;
     border-right: 1em solid transparent !important;
     border-bottom: 2em solid orange !important;
+}
+
+.popup {
+    position: relative;
+    width: 30%;
+    height: 25%;
+    border: 0.5em solid lawngreen;
+    margin: 2.2em .2em;
+    padding: 0 2em;
+    text-align: center;
+}
+
+.popup:after {
+    content: '';
+    position: absolute;
+    top: 4em;
+    left: -3em;
+    border: 1em solid transparent;
+    border-right: 2em solid lawngreen;
 }
