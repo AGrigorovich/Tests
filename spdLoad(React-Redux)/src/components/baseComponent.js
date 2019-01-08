@@ -7,12 +7,10 @@ class BaseComponent extends Component {
     selectedItems = (newValue) => {
         this.props.dispatch({
             type: "CHANGE_SELECTED_ITEMS",
-            itemsName: newValue.items,
-            itemsValue: newValue.index
+            newValue: newValue
         });
     };
     mouseOnComponent = (popupParams) => {
-        debugger
         this.props.dispatch({
             type: "MOUSE_ENTER_COMPONENT",
             payload: popupParams
@@ -26,16 +24,17 @@ class BaseComponent extends Component {
     };
 
     render() {
-        const {images} = this.props;
+        const {images, items} = this.props;
         return (
             <React.Fragment>
                 <fieldset>
                     <legend>I AM</legend>
                     <HandsItemsComponent
-                        mouseOnComponent={()=>this.mouseOnComponent()}
-                        mouseLeaveComponent={()=>this.mouseLeaveComponent()}
-                        selectedItems={(value)=>this.selectedItems(value)}
+                        mouseOnComponent={() => this.mouseOnComponent()}
+                        mouseLeaveComponent={() => this.mouseLeaveComponent()}
+                        selectedItems={(value) => this.selectedItems(value)}
                         images={images}
+                        items={items}
                     />
                 </fieldset>
             </React.Fragment>
@@ -45,7 +44,8 @@ class BaseComponent extends Component {
 
 function mapStateToProps(state) {
     return {
-        images: state
+        images: state.orderReducer.arrayOfImages,
+        items: state.orderReducer.order
     }
 }
 

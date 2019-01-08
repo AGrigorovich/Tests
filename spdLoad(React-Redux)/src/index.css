@@ -12,3 +12,29 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+    display: flex;
+    height: 40em;
+}
+
+fieldset {
+    margin: 1em;
+    width: 45%;
+    text-align: center;
+    border: .5em solid lawngreen;
+    background-color: floralwhite;
+}
+
+legend {
+    padding: 0 .5em;
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: .2em solid lawngreen;
+    color: forestgreen;
+}
+
+.itemsContainer {
+    margin: 1em;
+    height: 25%;
+}
