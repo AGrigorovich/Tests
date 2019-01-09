@@ -5,7 +5,9 @@ class ButtonsComponent extends Component {
     makeOrder = () => {
         //here we get our order and can send it to server
         let order = this.props.order;
-        console.log(order)
+        let makeOrder = this.props.makeOrder;
+        let userOrder = Object.assign({}, order, makeOrder, {checkboxes: Object.assign(order.checkboxes, makeOrder.checkboxes)});
+        console.log(userOrder);
     };
     clearOrder = () => {
         this.props.dispatch({
@@ -25,7 +27,8 @@ class ButtonsComponent extends Component {
 
 function mapStateToProps(state) {
     return {
-        order: state.orderReducer.order
+        order: state.orderReducer.order,
+        makeOrder: state.makeOrderReducer.order
     }
 }
 

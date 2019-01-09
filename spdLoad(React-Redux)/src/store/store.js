@@ -5,7 +5,15 @@ import {initialState} from '../constants/consts';
 const orderReducer = function (state = initialState, action) {
     if (action.type === 'CHANGE_SELECTED_ITEMS') {
         return ({
-            ...state, order: {...state.order, [action.payload.itemsName]: action.payload.value}
+            ...state, defaultValues: {
+                ...state.defaultValues, [action.payload.containerIndex]:
+                    {...state.defaultValues[action.payload.containerIndex], itemsValue: action.payload.itemsValue}
+            }
+        })
+    }
+    if (action.type === 'CHANGE_CHECKBOX_ITEMS') {
+        return ({
+            ...state, order: {...state.order, checkboxes: action.payload}
         })
     }
     if (action.type === 'MOUSE_ENTER_COMPONENT') {
@@ -25,12 +33,21 @@ const orderReducer = function (state = initialState, action) {
     }
     if (action.type === 'CLEAR_ORDER') {
         return ({
-            ...state, order: {...state.order, ...state.defaultValue}
+            ...state, defaultValues:{...state.defaultValues, ...initialState.defaultValues}
         })
     }
     return state
 };
 
-const store = createStore(combineReducers({orderReducer}));
+const makeOrderReducer = function (state = initialState, action) {
+    if (action.type === 'CHANGE_SELECTED_ITEMS') {
+        return ({
+            ...state, order: {...state.order, [action.payload.itemsName]: action.payload.itemsValue}
+        })
+    }
+    return state;
+};
+
+const store = createStore(combineReducers({orderReducer, makeOrderReducer}));
 
 export default store;

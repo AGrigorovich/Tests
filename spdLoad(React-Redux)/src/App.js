@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import BasePage from './views/basePage';
+import BasePage from './components/BaseComponent/baseComponent';
 
 class App extends Component {
   render() {

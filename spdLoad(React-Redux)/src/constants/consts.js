@@ -11,23 +11,18 @@ export const initialState = {
         leafsItems: 0,
         checkboxes: []
     },
-    defaultValue: {
-        handsItem: 0,
-        flowersItem: 0,
-        leafsItems: 0,
-        checkboxes: [
-            {value: '1', checked: false, imgSrc: ''},
-            {value: '2', checked: false, imgSrc: ''},
-            {value: '3', checked: false, imgSrc: ''},
-            {value: '4', checked: 'checked', imgSrc: '../img/grass.png'},
-            {value: '5', checked: 'checked', imgSrc: '../img/tree.png'},
-        ],
-    },
-    arrayOfImages: {
-        handsImages: arrayOfImages.handsImages,
-        flowersImages: arrayOfImages.flowersImages,
-        leafsImages: arrayOfImages.leafsImages,
-    },
+    defaultValues: [
+        {itemsName: 'handsItem', itemsValue: 0, images: arrayOfImages.handsImages},
+        {itemsName: 'flowersItem', itemsValue: 0, images: arrayOfImages.flowersImages},
+        {itemsName: 'leafsItems', itemsValue: 0, images: arrayOfImages.leafsImages},
+    ],
+    checkboxesDefaultValue: [
+        {value: '1', checked: false, imgSrc: ''},
+        {value: '2', checked: false, imgSrc: ''},
+        {value: '3', checked: false, imgSrc: ''},
+        {value: '4', checked: 'checked', imgSrc: '../img/grass.png'},
+        {value: '5', checked: 'checked', imgSrc: '../img/tree.png'},
+    ],
     popupParams: null
 };
 
