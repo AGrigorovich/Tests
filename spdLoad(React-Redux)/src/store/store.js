@@ -15,12 +15,17 @@ const orderReducer = function (state = initialState, action) {
     }
     if (action.type === 'MOUSE_LEAVE_COMPONENT') {
         return ({
-            ...state, ...{popupParams: action.mouseOnComponent},
+            ...state, ...{popupParams: action.popupParams},
         })
     }
     if (action.type === 'GET_DATA_FROM_API') {
         return ({
             ...state, ...{dataFromApi: {...action.data}}
+        })
+    }
+    if (action.type === 'CLEAR_ORDER') {
+        return ({
+            ...state, order: {...state.order, ...state.defaultValue}
         })
     }
     return state

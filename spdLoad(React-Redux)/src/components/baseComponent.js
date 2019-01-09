@@ -4,7 +4,9 @@ import {connect} from 'react-redux';
 import HandsComponent from './handsComponent';
 import FlowersComponent from './flowersComponent';
 import LeafsComponent from './leafsComponent';
+import CheckBoxesComponent from './checkboxesComponent';
 import PopupComponent from '../components/popupComponent';
+import ButtonsComponent from '../components/buttonsComponent';
 
 import {APIURL} from '../constants/consts';
 
@@ -53,6 +55,11 @@ class BaseComponent extends Component {
                         mouseLeaveComponent={() => this.mouseLeaveComponent()}
                         images={images.leafsImages}
                     />
+                    <CheckBoxesComponent
+                        mouseOnComponent={(value) => this.mouseOnComponent(value)}
+                        mouseLeaveComponent={() => this.mouseLeaveComponent()}
+                    />
+                    <ButtonsComponent/>
                 </fieldset>
                 <PopupComponent/>
             </React.Fragment>

@@ -1,28 +1,25 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 
-import LeafsImagesContainer from '../views/leafsImagesContainer';
+import CheckBoxesContainer from '../views/checkboxesContainer';
+import {checkboxPopupParams} from "../constants/consts";
 
-import {leafsPopupParams} from '../constants/consts';
-
-class LeafsComponent extends Component {
-
+class CheckBoxesComponent extends Component {
     selectedItems = (newValue) => {
         this.props.dispatch({
             type: "CHANGE_SELECTED_ITEMS",
             payload: {
-                itemsName: 'leafsItems',
+                itemsName: 'checkboxes',
                 value: newValue
             }
         });
     };
 
     render() {
-        const {images, mouseOnComponent, mouseLeaveComponent, itemsValue} = this.props;
+        const {mouseOnComponent, mouseLeaveComponent, itemsValue} = this.props;
         return (
-            <LeafsImagesContainer
-                images={images}
-                mouseOnComponent={() => mouseOnComponent(leafsPopupParams)}
+            <CheckBoxesContainer
+                mouseOnComponent={() => mouseOnComponent(checkboxPopupParams)}
                 mouseLeaveComponent={() => mouseLeaveComponent()}
                 selectedItems={(value) => this.selectedItems(value)}
                 itemsValue={itemsValue}
@@ -33,8 +30,8 @@ class LeafsComponent extends Component {
 
 function mapStateToProps(state) {
     return {
-        itemsValue: state.orderReducer.order.leafsItems
+        itemsValue: state.orderReducer.defaultValue,
     }
 }
 
-export default connect(mapStateToProps)(LeafsComponent);
+export default connect(mapStateToProps)(CheckBoxesComponent);

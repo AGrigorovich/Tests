@@ -1,8 +1,7 @@
 const arrayOfImages = {
     handsImages: ['../img/hand1.png', '../img/hand2.png', '../img/hand3.png'],
     flowersImages: ['../img/flowers1.png', '../img/flowers2.png', '../img/flowers3.png'],
-    leafsImages: ['../img/leaf.png', '../img/leaf.png', '../img/leaf.png'],
-    checkboxesImages: ['../img/grass.png', '../img/tree.png']
+    leafsImages: ['../img/leaf.png', '../img/leaf.png', '../img/leaf.png']
 };
 
 export const initialState = {
@@ -12,10 +11,22 @@ export const initialState = {
         leafsItems: 0,
         checkboxes: []
     },
+    defaultValue: {
+        handsItem: 0,
+        flowersItem: 0,
+        leafsItems: 0,
+        checkboxes: [
+            {value: '1', checked: false, imgSrc: ''},
+            {value: '2', checked: false, imgSrc: ''},
+            {value: '3', checked: false, imgSrc: ''},
+            {value: '4', checked: 'checked', imgSrc: '../img/grass.png'},
+            {value: '5', checked: 'checked', imgSrc: '../img/tree.png'},
+        ],
+    },
     arrayOfImages: {
         handsImages: arrayOfImages.handsImages,
         flowersImages: arrayOfImages.flowersImages,
-        leafsImages: arrayOfImages.leafsImages
+        leafsImages: arrayOfImages.leafsImages,
     },
     popupParams: null
 };

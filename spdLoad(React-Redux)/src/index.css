@@ -15,7 +15,7 @@ code {
 
 .App {
     display: flex;
-    height: 40em;
+    height: 55em;
 }
 
 fieldset {
@@ -34,7 +34,7 @@ legend {
     color: forestgreen;
 }
 
-.itemsContainer {
+.itemsContainer, .checkboxesContainer {
     margin: 1em;
     height: 20%;
 }
@@ -82,8 +82,43 @@ legend {
 .popup:after {
     content: '';
     position: absolute;
-    top: 4em;
+    top: 5.5em;
     left: -3em;
     border: 1em solid transparent;
     border-right: 2em solid lawngreen;
+}
+
+.checkboxesContainer {
+    border-top: .3em solid green;
+    border-bottom: .3em solid green;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkboxesContainer div {
+    display: inline-grid;
+}
+
+.checkboxImg {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+input[type=checkbox] {
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+}
+
+.buttonsContainer {
+    display: inline-flex;
+}
+
+.buttons {
+    width: 5em;
+    height: 2em;
+    background: green;
+    border: none;
+    margin: 0.5em;
+    cursor: pointer;
 }
