@@ -1,0 +1,11 @@
+<ng-container *ngFor="let item of todoList; index as ind" >
+  <div *ngIf="item.searching" class="input-group-text">
+  <input type="checkbox" checked={{item.checked}} class="col-1" (change)="markItem(ind)">
+  <section class="text-left col-9">
+    <input type="text" class="editInput {{item.checked}}" #newTodoValue disabled={{item.disable}} value={{item.todo}}
+           (keydown.enter)=changeTodoValue(ind,newTodoValue.value)>
+  </section>
+  <button class="btn btn-danger col-1" title="Delete this todo" (click)="deleteItem(ind)">Delete</button>
+  <button *ngIf='!item.checked' class="btn btn-info col-1" title="Edit this todo" (click)="editItem(ind)">Edit</button>
+  </div>
+</ng-container>

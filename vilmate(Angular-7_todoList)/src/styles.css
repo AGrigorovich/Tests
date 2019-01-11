@@ -1,0 +1,14 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.input-group-text section{
+  font-size: 2em;
+  font-weight: bold;
+}
+.checked{
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+.editInput{
+  width: 100%;
+  border: none;
+}
